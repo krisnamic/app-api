@@ -1,5 +1,5 @@
 Sentry.init do |config|
-  config.dsn = Rails.application.credentials(:sentry, :dsn)
+  config.dsn = Rails.application.credentials.dig(:sentry, :dsn)
   config.breadcrumbs_logger = [:active_support_logger]
 
   # To activate performance monitoring, set one of these options.
