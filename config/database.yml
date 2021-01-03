@@ -4,7 +4,7 @@ defaults: &defaults
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 dev_defaults: &dev_defaults
-  host: db
+  host: postgres
   username: postgres
   password: postgres
 
