@@ -189,6 +189,8 @@ GEM
       connection_pool (>= 2.2.2)
       rack (~> 2.0)
       redis (>= 4.2.0)
+    sidekiq_alive (2.0.4)
+      sidekiq
     slack-notifier (2.3.2)
     spring (2.1.0)
     spring-watcher-listen (2.0.1)
@@ -234,6 +236,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.2)
   rubocop (= 0.89.0)
   sidekiq
+  sidekiq_alive
   slack-notifier
   spring
   spring-watcher-listen (~> 2.0.0)

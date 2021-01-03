@@ -28,6 +28,7 @@ gem 'awesome_print'
 gem 'eth'
 gem 'event_bus'
 gem 'sidekiq'
+gem 'sidekiq_alive'
 gem 'slack-notifier'
 
 group :development, :test do
