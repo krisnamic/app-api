@@ -17,7 +17,7 @@ spec:
         - name: sidekiq
           image: <IMAGE>
           command: ["/bin/sh"]
-          args: ["-c", "rm tmp/pids/server.pid; touch tmp/pids/server.pid; bundle exec rake db:migrate; bundle exec sidekiq -C config/sidekiq.yml"]
+          args: ["-c", "bundle exec rake db:migrate; bundle exec sidekiq -C config/sidekiq.yml"]
           ports:
             - containerPort: 7433
           env:

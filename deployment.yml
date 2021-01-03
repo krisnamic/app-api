@@ -17,7 +17,7 @@ spec:
         - name: api
           image: <IMAGE>
           command: ["/bin/sh"]
-          args: ["-c", "rm tmp/pids/server.pid; touch tmp/pids/server.pid; bundle exec rake db:migrate; bundle exec puma -C config/puma.rb"]
+          args: ["-c", "bundle exec rake db:migrate; bundle exec puma -C config/puma.rb"]
           ports:
             - containerPort: 5000
           env:
