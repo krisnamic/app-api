@@ -27,11 +27,11 @@ gem 'active_model_serializers', '~> 0.10.0'
 gem 'awesome_print'
 gem 'eth'
 gem 'event_bus'
+gem 'sentry-rails'
+gem 'sentry-ruby'
 gem 'sidekiq'
 gem 'sidekiq_alive'
 gem 'slack-notifier'
-gem 'sentry-ruby'
-gem 'sentry-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
