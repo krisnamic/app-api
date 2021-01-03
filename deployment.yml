@@ -33,6 +33,10 @@ spec:
             value: k8s.invoice.build
           - name: CORS_ORIGINS
             value: k8s.invoice.build
+          - name: ETH_UTILS_API_HOST
+            value: eth-utils-api
+          - name: ETH_UTILS_API_PORT
+            value: '3001'
           - name: DATABASE_URL
             valueFrom:
               secretKeyRef:
