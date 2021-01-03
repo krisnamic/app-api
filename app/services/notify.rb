@@ -1,14 +1,18 @@
 # frozen_string_literal: true
 
-class SlackNotificationService
+class Notify
   attr_reader :notifier
 
   def initialize
-    webhook_url = ENV.fetch('SLACK_INCOMING_WEBHOOK_URL', nil)
+    webhook_url = Creds.fetch(:slack, :webhooks, :incoming_url)
     @notifier = Slack::Notifier.new(webhook_url, channel: '#notifications', username: 'invoice.build')
   end
 
-  def send(message)
+  def self.slack(message)
+    new.slack(message)
+  end
+
+  def slack(message)
     notifier.ping(message)
   end
 end

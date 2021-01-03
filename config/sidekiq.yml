@@ -4,5 +4,5 @@ staging:
 production:
   :concurrency: 5
 :queues:
-  - critical
-  - default
+  - invoice_build_critical
+  - invoice_build_default

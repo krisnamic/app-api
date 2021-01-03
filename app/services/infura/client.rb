@@ -7,15 +7,14 @@ module Infura
   class Client
     include Api::Transactions
 
-    attr_reader :api_key, :project_id, :project_secret, :host, :base_path, :debug
+    attr_reader :project_id, :project_secret, :host, :base_path, :debug
 
     DOMAIN = 'infura.io'
     VERSION = 'v3'
 
     def initialize(network: 'mainnet')
-      @api_key        = ENV.fetch('INFURA_API_SECRET', nil)
-      @project_id     = ENV.fetch('INFURA_PROJECT_ID', '')
-      @project_secret = ENV.fetch('INFURA_PROJECT_SECRET', '')
+      @project_id     = Creds.fetch(:infura, :project_id)
+      @project_secret = Creds.fetch(:infura, :project_secret)
       @host           = "#{network}.#{DOMAIN}"
       @base_path      = "/#{VERSION}/#{project_id}"
       @debug          = false

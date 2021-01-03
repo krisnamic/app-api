@@ -13,7 +13,7 @@ module Etherscan
     def initialize(network: 'mainnet')
       subdomain = network == 'mainnet' ? 'api' : "api-#{network}"
       @url = "#{PROTOCOL}#{subdomain}.#{DOMAIN}#{BASE_PATH}"
-      @api_key = ENV.fetch('ETHERSCAN_API_KEY', nil)
+      @api_key = Creds.fetch(:etherscan, :api_key)
     end
 
     def get_block_number

@@ -12,7 +12,7 @@ module InvoiceAuthorization
 
     def invoice_session_token(invoice)
       expires = Time.now.to_i + 30.days.to_i
-      JWT.encode({ invoice_id: invoice.id, exp: expires }, ENV['JWT_SECRET'], 'HS256')
+      JWT.encode({ invoice_id: invoice.id, exp: expires }, Creds.fetch(:jwt_secret), 'HS256')
     end
 
     private
@@ -26,7 +26,7 @@ module InvoiceAuthorization
     def decoded_invoice_token
       if (token = request.headers['Invoice-Authorization'])
         begin
-          JWT.decode(token, ENV['JWT_SECRET'], true, { algorithm: 'HS256' })
+          JWT.decode(token, Creds.fetch(:jwt_secret), true, { algorithm: 'HS256' })
         rescue JWT::ExpiredSignature
           []
         rescue JWT::DecodeError
