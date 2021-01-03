@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  IMAGE_PATH: garethfuller/invoice-build-api
+  IMAGE_PATH: invoicebuild/api
   URL: https://api.invoice.build
   K8S_NAMESPACE: invoice-build
 
