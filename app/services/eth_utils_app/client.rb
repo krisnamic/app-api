@@ -7,8 +7,8 @@ module EthUtilsApp
     attr_reader :host, :port
 
     def initialize
-      @host = ENV.fetch('ETH_UTILS_API_HOST', 'eth_utils_api')
-      @port = ENV.fetch('ETH_UTILS_API_PORT', 3000)
+      @host = ENV.fetch('ETH_UTILS_API_HOST', 'eth-utils-api')
+      @port = ENV.fetch('ETH_UTILS_API_PORT', 3001)
     end
 
     def get(endpoint)
