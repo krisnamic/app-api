@@ -30,9 +30,9 @@ spec:
           - name: RAILS_LOG_TO_STDOUT
             value: 'true'
           - name: FRONT_URL
-            value: k8s.invoice.build
+            value: invoice.build
           - name: CORS_ORIGINS
-            value: k8s.invoice.build
+            value: invoice.build
           - name: ETH_UTILS_API_HOST
             value: eth-utils-api
           - name: ETH_UTILS_API_PORT
