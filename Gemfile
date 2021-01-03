@@ -30,6 +30,8 @@ gem 'event_bus'
 gem 'sidekiq'
 gem 'sidekiq_alive'
 gem 'slack-notifier'
+gem 'sentry-ruby'
+gem 'sentry-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
