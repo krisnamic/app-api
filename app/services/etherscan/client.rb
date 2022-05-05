@@ -7,7 +7,7 @@ module Etherscan
     attr_reader :url, :api_key
 
     PROTOCOL = 'https://'
-    DOMAIN = 'etherscan.io'
+    DOMAIN = network == 'bsc' || network == 'bsctest' ? 'bscscan.com' : (network == 'polygon' || network == 'mumbai' ? 'polygonscan.com' : 'etherscan.io')
     BASE_PATH = '/api'
 
     def initialize(network: 'mainnet')

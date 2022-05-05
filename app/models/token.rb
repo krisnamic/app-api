@@ -24,5 +24,10 @@ class Token < ApplicationRecord
   # SCOPES
   scope :mainnet, -> { where(network: 'mainnet') }
   scope :ropsten, -> { where(network: 'ropsten') }
+  scope :rinkeby, -> { where(network: 'rinkeby') }
+  scope :polygon, -> { where(network: 'polygon') }
+  scope :mumbai, -> { where(network: 'mumbai') }
+  scope :bsc, -> { where(network: 'bsc') }
+  scope :bsctest, -> { where(network: 'bsctest') }
   scope :by_network, ->(network) { where(network: network) }
 end
